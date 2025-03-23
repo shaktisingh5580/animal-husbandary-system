@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animal Husbandry System</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/components.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="logo">
+        <h1>Animal Husbandry System</h1>
+      </div>
+      <nav class="nav" id="main-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="login.html" class="nav-link">Login</a>
+        <a href="register.html" class="nav-link">Register</a>
+      </nav>
+    </header>
+
+    <main class="main-content">
+      <section class="hero">
+        <div class="hero-content">
+          <h2>Efficient Livestock Management</h2>
+          <p>A comprehensive system for veterinarians, farmers, and officials to manage animal health and medicine distribution.</p>
+          <div class="cta-buttons">
+            <a href="login.html" class="btn btn-primary">Login</a>
+            <a href="register.html" class="btn btn-secondary">Register</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img src="images/hero-image.svg" alt="Animal Husbandry Illustration" onerror="this.src='https://via.placeholder.com/500x300?text=Animal+Husbandry'">
+        </div>
+      </section>
+
+      <section class="features">
+        <h2>Key Features</h2>
+        <div class="feature-grid">
+          <div class="feature-card">
+            <i class="fas fa-pills feature-icon"></i>
+            <h3>Medicine Management</h3>
+            <p>Track and manage veterinary medicines efficiently.</p>
+          </div>
+          <div class="feature-card">
+            <i class="fas fa-clipboard-list feature-icon"></i>
+            <h3>Inventory Control</h3>
+            <p>Monitor medicine stock levels and distribution.</p>
+          </div>
+          <div class="feature-card">
+            <i class="fas fa-chart-line feature-icon"></i>
+            <h3>Analytics</h3>
+            <p>Gain insights through comprehensive reports and analytics.</p>
+          </div>
+          <div class="feature-card">
+            <i class="fas fa-users feature-icon"></i>
+            <h3>Role-Based Access</h3>
+            <p>Specialized interfaces for vets, farmers, and officials.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>&copy; 2023 Animal Husbandry System. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <script src="js/config.js"></script>
+  <script src="js/supabase.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
