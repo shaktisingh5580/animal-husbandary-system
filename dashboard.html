@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Animal Husbandry System</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="dashboard-container">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <h2 class="sidebar-title">Animal Husbandry</h2>
+        <button id="sidebar-close" class="sidebar-close">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      
+      <div class="sidebar-user">
+        <div class="user-avatar">
+          <i class="fas fa-user"></i>
+        </div>
+        <div class="user-info">
+          <p id="user-name">Loading...</p>
+          <p id="user-role" class="user-role">...</p>
+        </div>
+      </div>
+      
+      <nav class="sidebar-nav">
+        <ul class="nav-list" id="nav-list">
+          <!-- Navigation will be populated by JavaScript based on user role -->
+          <li class="nav-item skeleton"></li>
+          <li class="nav-item skeleton"></li>
+          <li class="nav-item skeleton"></li>
+          <li class="nav-item skeleton"></li>
+        </ul>
+      </nav>
+      
+      <div class="sidebar-footer">
+        <button id="logout-button" class="btn btn-outline btn-block">
+          <i class="fas fa-sign-out-alt"></i>
+          Logout
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main content -->
+    <main class="dashboard-main">
+      <header class="dashboard-header">
+        <button id="sidebar-toggle" class="sidebar-toggle">
+          <i class="fas fa-bars"></i>
+        </button>
+        <h1 id="page-title">Dashboard</h1>
+        <div class="header-actions">
+          <a href="profile.html" class="btn btn-sm btn-outline">
+            <i class="fas fa-user"></i>
+            Profile
+          </a>
+        </div>
+      </header>
+
+      <!-- Loading indicator -->
+      <div id="loading-indicator" class="loading-container">
+        <div class="loading-spinner"></div>
+        <p>Loading dashboard...</p>
+      </div>
+
+      <!-- Dashboard content -->
+      <div id="dashboard-content" class="dashboard-content hidden">
+        <!-- Content will be populated by JavaScript based on user role -->
+      </div>
+    </main>
+  </div>
+
+  <script src="js/config.js"></script>
+  <script src="js/supabase.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>
