@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="300" viewBox="0 0 500 300">
+  <rect width="500" height="300" fill="#f3f4f6"/>
+  <text x="250" y="150" font-family="Arial" font-size="24" text-anchor="middle" fill="#3b82f6">Animal Husbandry System</text>
+  <circle cx="250" cy="100" r="50" fill="#3b82f6" opacity="0.2"/>
+  <path d="M200,200 Q250,150 300,200" stroke="#3b82f6" stroke-width="3" fill="none"/>
+  <rect x="180" y="210" width="140" height="40" rx="5" fill="#3b82f6" opacity="0.1"/>
+</svg>
+
