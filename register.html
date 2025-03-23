@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register - Animal Husbandry System</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/components.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <div class="auth-container">
+      <div class="card register-card">
+        <div class="card-header">
+          <h2 class="card-title">Create an Account</h2>
+          <p class="card-description">Register to access the Animal Husbandry System</p>
+        </div>
+
+        <div class="card-content">
+          <!-- Connection error alert -->
+          <div id="connection-alert" class="alert alert-warning hidden">
+            <i class="fas fa-exclamation-triangle alert-icon"></i>
+            <div class="alert-content">
+              <h4 class="alert-title">Connection Issue</h4>
+              <p id="connection-message">Unable to connect to the database.</p>
+              <div class="alert-actions">
+                <button id="retry-connection" class="btn btn-sm btn-outline">
+                  <i class="fas fa-sync-alt"></i>
+                  <span>Retry Connection</span>
+                </button>
+                <a href="setup/diagnostics.html" class="link-primary">
+                  <i class="fas fa-info-circle"></i>
+                  <span>Run Diagnostics</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Error alert -->
+          <div id="error-alert" class="alert alert-danger hidden">
+            <i class="fas fa-exclamation-triangle alert-icon"></i>
+            <div class="alert-content">
+              <h4 class="alert-title">Error</h4>
+              <p id="error-message"></p>
+            </div>
+          </div>
+
+          <form id="register-form" class="form">
+            <div class="form-group">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" id="email" class="form-input" placeholder="your.email@example.com" required>
+            </div>
+
+            <div class="form-group">
+              <label for="password" class="form-label">Password</label>
+              <input type="password" id="password" class="form-input" required>
+              <p class="form-hint">Password must be at least 8 characters long</p>
+            </div>
+
+            <div class="form-group">
+              <label for="confirm-password" class="form-label">Confirm Password</label>
+              <input type="password" id="confirm-password" class="form-input" required>
+            </div>
+
+            <div class="form-group">
+              <label for="role" class="form-label">Role</label>
+              <select id="role" class="form-select" required>
+                <option value="" disabled selected>Select your role</option>
+                <option value="farmer">Farmer</option>
+                <option value="vet">Veterinarian</option>
+                <option value="official">Government Official</option>
+              </select>
+            </div>
+
+            <button type="submit" id="register-button" class="btn btn-primary btn-block">
+              <span id="register-text">Register</span>
+              <span id="register-loading" class="hidden">
+                <i class="fas fa-spinner fa-spin"></i>
+                Registering...
+              </span>
+            </button>
+          </form>
+        </div>
+
+        <div class="card-footer">
+          <p class="text-center">
+            Already have an account?
+            <a href="login.html" class="link-primary">Login</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/config.js"></script>
+  <script src="js/supabase.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/register.js"></script>
+</body>
+</html>
