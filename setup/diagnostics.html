@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>System Diagnostics - Animal Husbandry System</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <div class="card diagnostics-card">
+      <div class="card-header">
+        <h2 class="card-title">System Diagnostics</h2>
+        <p class="card-description">Check your system configuration and connection to Supabase</p>
+      </div>
+
+      <div class="card-content">
+        <!-- Overall Status -->
+        <div id="overall-status" class="alert hidden">
+          <i id="status-icon" class="alert-icon"></i>
+          <div class="alert-content">
+            <h4 id="status-title" class="alert-title"></h4>
+            <p id="status-message"></p>
+          </div>
+        </div>
+
+        <!-- Environment Variables Check -->
+        <div class="diagnostics-section">
+          <h3 class="section-title">
+            <span>Configuration Check</span>
+            <span id="env-status" class="status-indicator"></span>
+          </h3>
+          <div id="env-results" class="section-content">
+            <p class="text-muted">Checking configuration...</p>
+          </div>
+        </div>
+
+        <!-- URL Validation -->
+        <div class="diagnostics-section">
+          <h3 class="section-title">
+            <span>Supabase URL Validation</span>
+            <span id="url-status" class="status-indicator"></span>
+          </h3>
+          <div id="url-results" class="section-content">
+            <p class="text-muted">Validating Supabase URL...</p>
+          </div>
+        </div>
+
+        <!-- Connection Test -->
+        <div class="diagnostics-section">
+          <h3 class="section-title">
+            <span>Supabase Connection</span>
+            <span id="connection-status" class="status-indicator"></span>
+          </h3>
+          <div id="connection-results" class="section-content">
+            <p class="text-muted">Testing connection to Supabase...</p>
+          </div>
+        </div>
+
+        <!-- Manual Connection Test -->
+        <div class="diagnostics-section border-top">
+          <h3 class="section-title">Manual Connection Test</h3>
+          <p class="text-muted">Test a direct connection to your Supabase API</p>
+          
+          <div class="input-group">
+            <input type="text" id="manual-test-url" class="form-input" placeholder="Enter Supabase API URL">
+            <button id="manual-test-button" class="btn btn-primary">
+              <span id="manual-test-text">Test Connection</span>
+              <span id="manual-test-loading" class="hidden">
+                <i class="fas fa-spinner fa-spin"></i>
+                Testing...
+              </span>
+            </button>
+          </div>
+          
+          <div id="manual-test-results" class="test-results hidden">
+            <!-- Results will be populated by JavaScript -->
+          </div>
+        </div>
+
+        <!-- Supabase Project Status -->
+        <div class="diagnostics-section border-top">
+          <h3 class="section-title">Supabase Project Status</h3>
+          <p class="text-muted">Check if your Supabase project is active and properly configured</p>
+          
+          <div class="mt-2">
+            <a href="https://app.supabase.com" target="_blank" rel="noopener noreferrer" class="link-primary">
+              <i class="fas fa-external-link-alt"></i>
+              Open Supabase Dashboard
+            </a>
+            
+            <div class="info-box">
+              <p class="font-medium">Check these items in your Supabase dashboard:</p>
+              <ul class="bullet-list">
+                <li>Verify your project is not paused</li>
+                <li>Check that your project has the correct API settings</li>
+                <li>Verify that Row Level Security (RLS) is properly configured</li>
+                <li>Check that your database tables exist and have the correct schema</li>
+                <li>Verify that your API keys have the necessary permissions</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-footer">
+        <div class="button-group">
+          <button id="run-diagnostics" class="btn btn-primary">
+            <span id="diagnostics-text">Run Diagnostics Again</span>
+            <span id="diagnostics-loading" class="hidden">
+              <i class="fas fa-spinner fa-spin"></i>
+              Running Diagnostics...
+            </span>
+          </button>
+          
+          <div class="button-group">
+            <a href="../index.html" class="btn btn-outline">
+              Back to Home
+            </a>
+            <a href="../login.html" class="btn btn-secondary">
+              Back to Login
+              <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/config.js"></script>
+  <script src="../js/supabase.js"></script>
+  <script src="../js/diagnostics.js"></script>
+</body>
+</html>
